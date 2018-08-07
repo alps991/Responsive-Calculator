@@ -1,0 +1,71 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html, .container-fluid {
+	width: 100%;
+}
+
+.container-fluid {
+	max-width: 1000px;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1.5rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid black;
+    transition: background 150ms ease-in-out, 
+                transform 100ms ease;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+.num-btn {
+	background: white;
+	color: black;
+}
+
+.num-btn:hover,
+.num-btn:focus {
+    background: #FAEBD7;
+}
+
+.action-btn {
+	background: #0069ed;
+	color: white;
+}
+
+.action-btn:hover,
+.action-btn:focus {
+    background: #0053ba;
+}
+
+.remove-save-btn .insert-save-btn {
+	padding: 1rem 1rem;
+}
+
+#calculator {
+	font-size: 2rem;
+}
+
+#solution {
+	font-size: 30px;
+	color: white;
+	height: 50px;
+	background-color: black;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+#savedList {
+	padding-top: 50px;
+	font-size: 2rem;
+}

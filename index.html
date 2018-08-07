@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+  	<div class="container-fluid">
+  		<h1>Calculator</h1>
+  		<div class="row" id="solution">
+	  	</div>
+	  	<div id="calculator">
+		  	<div class ="row">
+			  	<button id="save" class="col-xs-6 action-btn">Save</button>
+			  	<button id="unsave" class="col-xs-6 action-btn">Clear Saves</button>
+			</div>
+		  	<div class ="row">
+			  	<button id="seven" class="col-xs-3 num-btn">7</button>
+			  	<button id="eight" class="col-xs-3 num-btn">8</button>
+				<button id="nine" class="col-xs-3 num-btn">9</button>
+				<button id="add" class="col-xs-3 action-btn">+</button>
+			</div>
+			<div class ="row">
+			  	<button id="four" class="col-xs-3 num-btn">4</button>
+			  	<button id="five" class="col-xs-3 num-btn">5</button>
+				<button id="six" class="col-xs-3 num-btn">6</button>
+				<button id="sub" class="col-xs-3 action-btn">-</button>
+			</div>
+			<div class ="row">
+			  	<button id="one" class="col-xs-3 num-btn">1</button>
+			  	<button id="two" class="col-xs-3 num-btn">2</button>
+				<button id="three" class="col-xs-3 num-btn">3</button>
+				<button id="mult" class="col-xs-3 action-btn">*</button>
+			</div>
+			<div class ="row">
+				<button id="zero" class="col-xs-3 num-btn">0</button>
+				<button id="decimal" class="col-xs-3 num-btn">.</button>
+			  	<button id="clear" class="col-xs-3 action-btn">C</button>
+			  	<button id="divide" class="col-xs-3 action-btn">/</button>
+			</div>
+			<div class ="row">
+			  	<button id="equals" class="col-xs-12 action-btn">=</button>
+			</div>
+		</div>
+	  	<div id="savedList">
+	  	</div>
+	  	
+	</div>
+
+
+  <script src="main.js"></script>
+  </body>
+</html>
