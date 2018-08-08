@@ -1,17 +1,28 @@
-var http = require('http'),
-    fs = require('fs')
-var port = process.env.PORT || 3000
-http.createServer(function (req, res) {
-    var url = './' + (req.url == '/' ? 'index.html' : req.url)
-    fs.readFile(url, function (err, html) {
-        if (err) {
-            var message404 = "There is no such page! <a href='/'>Back to home page</a>"
-            res.writeHead(404, { 'Content-Type': 'text/html', 'Content-Length': message404.length })
-            res.write(message404)
-        } else {
-            res.writeHead(200, { 'Content-Type': 'text/html', 'Content-Length': html.length })
-            res.write(html)
-        }
-        res.end()
-    })
-}).listen(port)
+var path = require('path');
+var express = require('express');
+// static file compression middleware
+var compress = require('compression');
+// middleware that allows you to parse request body, json, etc.
+var bodyParser = require('body-parser');
+// middleware to allow the general use of PUT and DELETE verbs
+var methodOverride = require('method-override');
+// logging middleware
+var morgan = require('morgan');
+// middleware to return X-Response-Time with a response
+var responseTime = require('response-time');
+
+var app = express();
+
+app.use(morgan('dev'));
+app.use(responseTime());
+
+app.use(bodyParser());
+app.use(methodOverride());
+
+app.use(compress());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(process.env.PORT || 3000);
+
+console.log('server started on port: ', process.env.PORT || 3000);

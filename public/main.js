@@ -1,6 +1,7 @@
+
 "use strict";
 
-$( document ).ready(function() {
+$(document).ready(function () {
 
 	let params = [];
 	let decimalPlace = 0;
@@ -77,7 +78,7 @@ $( document ).ready(function() {
 	});
 
 	$("#save").click(() => {
-		if(params[0]){
+		if (params[0]) {
 			$('#savedList').append(
 				`<div class="row">
 					<span class="col-xs-3">${params[0]}</span>
@@ -101,21 +102,21 @@ $( document ).ready(function() {
 	});
 
 	$(document).on('click', ".insert-save-btn", (e) => {
-		if(params.length == 0 || params.length == 2) {
+		if (params.length == 0 || params.length == 2) {
 			addParams(e.currentTarget.closest("div").children[0].innerHTML);
 		}
 	});
 
-	function evaluate(arr){
-		if(params.length > 2){
-			switch(arr[1]) {
+	function evaluate(arr) {
+		if (params.length > 2) {
+			switch (arr[1]) {
 				case '+':
 					return parseFloat((arr[0] + arr[2]).toFixed(8));
 					break;
 				case '-':
 					return parseFloat((arr[0] - arr[2]).toFixed(8));
 					break;
-				case '*': 
+				case '*':
 					return parseFloat((arr[0] * arr[2]).toFixed(8));
 					break;
 				case '/':
@@ -127,44 +128,44 @@ $( document ).ready(function() {
 		}
 	}
 
-	function addParams(x){
-		let prev = params[params.length-1];
-		if(isAcceptableParam(x)){
-			if(decimalPlace > 0 && isNumber(x)){
-				params[params.length-1] = prev + x / Math.pow(10, decimalPlace);
+	function addParams(x) {
+		let prev = params[params.length - 1];
+		if (isAcceptableParam(x)) {
+			if (decimalPlace > 0 && isNumber(x)) {
+				params[params.length - 1] = prev + x / Math.pow(10, decimalPlace);
 				decimalPlace++;
 				$('#solution').append(x);
-			} else if(x == "."){
-				if(decimalPlace == 0) {
-					if(params.length == 0 || !isNumber(prev)){
-						params.push(0);					
+			} else if (x == ".") {
+				if (decimalPlace == 0) {
+					if (params.length == 0 || !isNumber(prev)) {
+						params.push(0);
 					}
 					$('#solution').append(x);
 					decimalPlace = 1;
 				}
-			} else if(isNumber(x) && isNumber(prev)){
-				params[params.length-1] = (prev * 10) + x;
+			} else if (isNumber(x) && isNumber(prev)) {
+				params[params.length - 1] = (prev * 10) + x;
 				$('#solution').append(x);
-			} else if(params.length < 3) {
+			} else if (params.length < 3) {
 				params.push(x);
 				decimalPlace = 0;
-				if(isNumber(x)) {
+				if (isNumber(x)) {
 					$('#solution').append(x);
 				} else {
 					$('#solution').append(` ${x} `);
 				}
-				
+
 			}
 		}
 	}
 
 	function isAcceptableParam(x) {
-		let prev = params[params.length-1];
+		let prev = params[params.length - 1];
 		return params.length < 4 && ((isNumber(x) || isNumber(prev)) || x == ".");
 	}
 
 	function isNumber(n) {
-	  return !isNaN(parseFloat(n)) && isFinite(n);
+		return !isNaN(parseFloat(n)) && isFinite(n);
 	}
 
 });

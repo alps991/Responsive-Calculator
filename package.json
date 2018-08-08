@@ -1,15 +1,37 @@
 {
-    "name": "responsive-calculator",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/alps991/Responsive-Calculator"
-    },
-    "author": "Alper Donmez",
-    "license": ""
+  "name": "responsive-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alps991/Responsive-Calculator.git"
+  },
+  "author": "Alper Donmez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alps991/Responsive-Calculator/issues"
+  },
+  "homepage": "https://github.com/alps991/Responsive-Calculator#readme",
+  "keywords": [
+    "static",
+    "server",
+    "simple",
+    "express"
+  ],
+  "engines": {
+    "node": ">=0.10.26"
+  },
+  "dependencies": {
+    "express": "4.1.1",
+    "compression": "1.0.2",
+    "body-parser": "1.0.2",
+    "method-override": "1.0.0",
+    "morgan": "1.0.1",
+    "response-time": "1.0.0"
+  }
 }
