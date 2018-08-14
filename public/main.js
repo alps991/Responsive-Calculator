@@ -7,68 +7,16 @@ $(document).ready(function () {
 	let decimalPlace = 0;
 	let locked = false;
 
-	$("#one").click(() => {
-		addParams(1);
+	$(".num-btn").click((e) => {
+		addParams(Number(e.target.textContent));
 	});
 
-	$("#two").click(() => {
-		addParams(2);
+	$(".operator").click((e) => {
+		addParams(e.target.textContent);
 	});
 
-	$("#three").click(() => {
-		addParams(3);
-	});
-
-	$("#four").click(() => {
-		addParams(4);
-	});
-
-	$("#five").click(() => {
-		addParams(5);
-	});
-
-	$("#six").click(() => {
-		addParams(6);
-	});
-
-	$("#seven").click(() => {
-		addParams(7);
-	});
-
-	$("#eight").click(() => {
-		addParams(8);
-	});
-
-	$("#nine").click(() => {
-		addParams(9);
-	});
-
-	$("#zero").click(() => {
-		addParams(0);
-	});
-
-	$("#decimal").click(() => {
-		addParams(".");
-	});
-
-	$("#add").click(() => {
-		addParams('+');
-	});
-
-	$("#sub").click(() => {
-		addParams('-');
-	});
-
-	$("#mult").click(() => {
-		addParams('*');
-	});
-
-	$("#divide").click(() => {
-		addParams('/');
-	});
-
-	$("#equals").click(() => {	
-		if(params.length == 3) {
+	$("#equals").click(() => {
+		if (params.length == 3) {
 			$('#solution').html("");
 			$('#solution').append(' = ' + evaluate(params));
 			params = [evaluate(params)];
@@ -139,7 +87,7 @@ $(document).ready(function () {
 		let prev = params[params.length - 1];
 		if (isAcceptableParam(x)) {
 			if (decimalPlace > 0 && isNumber(x)) {
-				if(decimalPlace < 9) {
+				if (decimalPlace < 9) {
 					params[params.length - 1] = parseFloat((prev + x / Math.pow(10, decimalPlace)).toFixed(8));
 					decimalPlace++;
 					$('#solution').append(x);
@@ -154,7 +102,7 @@ $(document).ready(function () {
 					decimalPlace = 1;
 				}
 			} else if (isNumber(x) && isNumber(prev)) {
-				if(!locked) {
+				if (!locked) {
 					params[params.length - 1] = (prev * 10) + x;
 					$('#solution').append(x);
 				}
@@ -168,9 +116,8 @@ $(document).ready(function () {
 					locked = false;
 				}
 			}
-			
+
 		}
-		console.log(params);
 	}
 
 	function isAcceptableParam(x) {
