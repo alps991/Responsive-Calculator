@@ -53,6 +53,10 @@ button:active {
 	padding: 1rem 1rem;
 }
 
+.saved-element {
+	padding: 10px 0;
+}
+
 #calculator {
 	font-size: 2rem;
 }

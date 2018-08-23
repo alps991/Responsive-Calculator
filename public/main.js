@@ -33,12 +33,11 @@ $(document).ready(function () {
 	$("#save").click(() => {
 		if (params[0]) {
 			$('#savedList').append(
-				`<div class="row">
+				`<div class="row saved-element">
 					<span class="col-xs-6">${params[0]}</span>
 					<button class="col-xs-3 insert-save-btn">Insert</button>
 					<button class="col-xs-3 remove-save-btn">Delete</button>
-				</div> 
-				<br>`
+				</div>`
 			);
 			$('#solution').text("");
 			params = [];
