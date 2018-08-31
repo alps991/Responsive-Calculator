@@ -116,7 +116,7 @@ $(document).ready(function () {
 					locked = false;
 				}
 			}
-			console.log(params, locked);
+			
 		}
 	}
 
