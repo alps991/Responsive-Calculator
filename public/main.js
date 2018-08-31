@@ -42,6 +42,7 @@ $(document).ready(function () {
 			$('#solution').text("");
 			params = [];
 			decimalPlace = 0;
+			locked = false;
 		}
 	});
 
@@ -62,7 +63,7 @@ $(document).ready(function () {
 
 	function evaluate(arr) {
 		if (params.length > 2) {
-			locked = false;
+			locked = true;
 			switch (arr[1]) {
 				case '+':
 					return parseFloat((arr[0] + arr[2]).toFixed(8));
@@ -115,7 +116,7 @@ $(document).ready(function () {
 					locked = false;
 				}
 			}
-
+			console.log(params, locked);
 		}
 	}
 
