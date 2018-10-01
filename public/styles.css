@@ -11,6 +11,12 @@ body, html, .container-fluid {
 	max-width: 1000px;
 }
 
+@media (min-width: 800px) {
+	.container-fluid {
+		padding-top: 5%;
+	}
+}
+
 button {
     display: inline-block;
     border: none;
